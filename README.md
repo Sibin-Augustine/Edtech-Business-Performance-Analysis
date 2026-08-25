@@ -1,7 +1,11 @@
 **EdTech Business Performance Dashboard**
 
 ## Project Overview
-Built an interactive Excel and Google Sheets dashboard to analyze 1,000 student records from an EdTech platform, tracking revenue, student demographics, payment status, device usage, and engagement metrics.
+This project analyses 1,000 student records from an EdTech platform, tracking revenue, student demographics, payment status, device usage, and engagement metrics using Excel/Google sheets. 
+
+## Problem Statement 
+
+An education tech platform which is focused on providing great learning experience for students from all background is experiencing low student enrollment which results in lower profit margin, recently. The stakeholders is expected to identify the less popular courses and popular course delivery medium. 
 
 ## Dashboard Preview 
 
