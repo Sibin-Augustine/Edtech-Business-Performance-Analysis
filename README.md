@@ -5,7 +5,7 @@ This project analyses 1,000 student records from an EdTech platform, tracking re
 
 ## Problem Statement 
 
-An education tech platform which is focused on providing great learning experience for students from all background is experiencing low student enrollment which results in lower profit margin, recently. The stakeholders is expected to identify the less popular courses and popular course delivery medium. 
+An education tech platform which is focused on providing great learning experience for students coming from different education background, recently, experiencing low student enrollment which results in lower profit margin. The stakeholders is expected to identify the less popular courses and popular course delivery medium. 
 
 ## Dashboard Preview 
 
@@ -48,7 +48,7 @@ An education tech platform which is focused on providing great learning experien
 - Average Points :- Average of the points acquired by students by completing course modules 
 
 ## Key Insights
-- North (344 students) and South (259 students) account for over 60% of total enrollments, indicating stronger market   penetration in these regions.
+- North (344 students) and South (259 students) account for over 60% of total enrollments, indicating stronger market penetration in these regions.
 - Students graduating between 2022–2026 represent the largest enrollment group (650 students), suggesting the platform primarily attracts recent graduates and current students.
 - 77.2% of students access the platform using mobile devices, making mobile the dominant learning platform.
 - Kickstarting Web Development has the lowest enrollment (19 students), significantly below the other available courses.
