@@ -32,6 +32,12 @@ An education tech platform which is focused on providing great learning experien
 - Conditional & aggregation formulas
 - Dashboard Design
 
+## 🔬 Methodology
+1. **Data Cleaning**: Dataset contain missing details such as course fee which differ for each region. Using conditional formula and autofill feature the course fee for each student is calculated. As per Gender of the students a salutation field is added and concataneted with name to obtain proper full name.   
+2. **Feature Engineering**: Using VLOOKUP and XLOOKUP, the details of the users experienced login issues is filled in another table. 
+3. **EDA**: Conditional aggregation formulas (SUMIF, COUNTIF) used to analyse the payment status and collected revenue. Also obtained number of students who uses various device. The user engagement is analysed using the average streak and average points. 
+4. **Visualization Strategy**: Pivot tables are used to summarize the given data based on region, signup device, passing year, education background, courses enrolled. Then bar chart is used to visualize number of students enrolled as per the selected metric. Donut chart is used to indicate percentagewise distribution of students as per their education background. Slicers are used to filter the visuals based on gender and payment status to make it interactive. 
+
 ## KPIs 
 - Total Revenue :- The total payment collected from enrolled students.
 - Total Students :- Total number of students enrolled in the platform.
