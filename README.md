@@ -47,12 +47,27 @@ An education tech platform which is focused on providing great learning experien
 - Average Streak :- Average of the number of days students visited the platform continuously
 - Average Points :- Average of the points acquired by students by completing course modules 
 
-## Key Insights
-- North (344 students) and South (259 students) account for over 60% of total enrollments, indicating stronger market penetration in these regions.
-- Students graduating between 2022–2026 represent the largest enrollment group (650 students), suggesting the platform primarily attracts recent graduates and current students.
-- 77.2% of students access the platform using mobile devices, making mobile the dominant learning platform.
-- Kickstarting Web Development has the lowest enrollment (19 students), significantly below the other available courses.
-- Only 32.8% of students have completed payments, highlighting an opportunity to improve payment conversion and reduce pending transactions.
+## Key Findings
+
+📊 **Overall Portfolio Health**
+- Total loans analyzed: 2.26M
+- Overall default rate: __%
+- Total capital deployed: $__ million
+
+⚠️ **Top Risk Factors**
+1. Grade G loans default at __% vs Grade A at __%
+2. Small business loans have __% default rate — highest among purposes
+3. Borrowers with DTI > 30 default __x more than those with DTI < 10
+4. Renters default __% more than homeowners
+
+🌎 **Geographic Risk**
+- Highest risk states: __, __, __
+- Safest states: __, __, __
+
+📈 **Trends**
+- Default rates spiked in year __ (likely due to __)
+- Average loan size grew from $__ to $__ over the period
+
 ## Recommendations
 - Increase targeted marketing campaigns in East and West regions to improve student acquisition and balance regional enrollment.
 - Continue developing courses aligned with the needs of recent graduates while exploring programs tailored for working professionals to diversify the learner base.
