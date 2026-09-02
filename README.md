@@ -33,33 +33,7 @@ A consumer lending institution wants to:
 
 
 ---
-### 🔍 Sample Query: DTI Deep-Dive Analysis
 
-```sql
-
-WITH categorized AS (
-    SELECT 
-        CASE 
-            WHEN dti < 10 THEN 'Low (<10)'
-            WHEN dti BETWEEN 10 AND 20 THEN 'Moderate (10-20)'
-            WHEN dti BETWEEN 20 AND 30 THEN 'High (20-30)'
-            WHEN dti BETWEEN 30 AND 40 THEN 'Very High (30-40)'
-            WHEN dti >= 40 THEN 'Extreme (40+)'
-        END AS dti_bucket,
-        purpose
-    FROM loans_clean
-    WHERE dti IS NOT NULL
-)
-SELECT 
-    dti_bucket,
-    purpose,
-    COUNT(*) AS loans,
-    ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (PARTITION BY dti_bucket), 2) AS pct_of_bucket
-FROM categorized
-GROUP BY dti_bucket, purpose
-ORDER BY dti_bucket, loans DESC;
-
-```
 
 ## 🗂️ Dataset
 
@@ -155,6 +129,54 @@ Wrote 8+ analytical queries using **CTEs, window functions, and conditional aggr
 <img width="696" height="190" alt="image" src="https://github.com/user-attachments/assets/b7c5a4c1-1aa0-46eb-83fd-f66aefc05131" />
 
 ---
+
+### The Curious Case of Extreme DTI (40+) ✨  
+
+
+
+| DTI Bucket | Loan Purpose | Total Loans | Share of Bucket (%) |
+| :--- | :--- | :---: | :---: |
+| Extreme (40+) | Debt Consolidation | 16,728 | 61.55% |
+| Extreme (40+) | Credit Card | 5,547 | 20.41% |
+| Extreme (40+) | Home Improvement | 1,834 | 6.75% |
+| Extreme (40+) | Other | 1,448 | 5.33% |
+| Extreme (40+) | Medical | 423 | 1.56% |
+| Extreme (40+) | Major Purchase | 412 | 1.52% |
+| Extreme (40+) | Vacation | 178 | 0.65% |
+| Extreme (40+) | Car | 164 | 0.60% |
+| Extreme (40+) | Moving | 161 | 0.59% |
+| Extreme (40+) | Small Business | 154 | 0.57% |
+
+
+### 🔍 Sample Query: DTI Deep-Dive Analysis
+
+```sql
+
+WITH categorized AS (
+    SELECT 
+        CASE 
+            WHEN dti < 10 THEN 'Low (<10)'
+            WHEN dti BETWEEN 10 AND 20 THEN 'Moderate (10-20)'
+            WHEN dti BETWEEN 20 AND 30 THEN 'High (20-30)'
+            WHEN dti BETWEEN 30 AND 40 THEN 'Very High (30-40)'
+            WHEN dti >= 40 THEN 'Extreme (40+)'
+        END AS dti_bucket,
+        purpose
+    FROM loans_clean
+    WHERE dti IS NOT NULL
+)
+SELECT 
+    dti_bucket,
+    purpose,
+    COUNT(*) AS loans,
+    ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (PARTITION BY dti_bucket), 2) AS pct_of_bucket
+FROM categorized
+GROUP BY dti_bucket, purpose
+ORDER BY dti_bucket, loans DESC;
+
+```
+
+
 ## 🔍 Key Findings
 
 ### 🎯 Overall Portfolio Health
