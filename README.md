@@ -174,7 +174,7 @@ Investigation revealed:
 
 ## 📬 Contact
 
-**[Your Name]**  
+**[Sibin Augustine]**  
 📧 [sibinaugustine12830@gamil.com]  
 💼 [LinkedIn](https://www.linkedin.com/in/sibin-augustine-53222516a/)  
 🌐 [Portfolio](https://yourportfolio.com)
