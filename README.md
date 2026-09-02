@@ -1,87 +1,214 @@
-**EdTech Business Performance Dashboard**
+# 🏦 Loan Default Risk Analysis | SQL + Excel Dashboard
 
-## Project Overview
-This project analyses 1,000 student records from an EdTech platform, tracking revenue, student demographics, payment status, device usage, and engagement metrics using Excel/Google sheets. 
+> An end-to-end credit risk analysis of **2.26M loans** from Lending Club (2007–2018), uncovering key default drivers and delivering actionable underwriting recommendations for BFSI/Fintech lenders.
 
-## Problem Statement 
-
-An education tech platform which is focused on providing great learning experience for students coming from different education background, recently, experiencing low student enrollment which results in lower profit margin. The stakeholders is expected to identify the less popular courses and popular course delivery medium. 
-
-## Dashboard Preview 
-
-<img width="406" height="320" alt="project51" src="https://github.com/user-attachments/assets/30c33fb5-6016-48cf-adb1-35572f12831a" />
+<img width="454" height="314" alt="image" src="https://github.com/user-attachments/assets/99299213-8b55-4e9c-96cf-96b513ca8c59" />
 
 
-## Dataset
-- 1,000 student records
-- Revenue
-- Course
-- Device
-- Payment Status
-- Region
-- Passing Year
-- Student Points
-- Learning Streak
+---
 
-## Tools Used
-- Microsoft Excel
-- Google Sheets
-- Pivot Tables
-- Pivot Charts
-- Slicers
-- Conditional & aggregation formulas
-- Dashboard Design
+## 📌 Project Overview
+
+This project analyzes historical loan performance data to identify **what drives loan defaults** and how lenders can **optimize underwriting decisions**. Using SQL for data aggregation and Excel for visualization, the analysis surfaces both expected patterns (grade-based risk) and counterintuitive insights (DTI paradox) that challenge conventional credit scoring assumptions.
+
+**Business Context:** Loan defaults cost lenders billions annually. Understanding *which borrower attributes signal risk* — and equally important, *when they don't* — is critical for building smarter credit models.
+
+---
+
+## 🎯 Problem Statement
+
+A consumer lending institution wants to:
+1. Identify **key predictors** of loan default across borrower demographics, loan attributes, and macroeconomic conditions
+2. Understand **which loan segments** carry disproportionate risk
+3. Detect **counterintuitive patterns** that may indicate flaws in current underwriting rules
+4. Develop **data-driven recommendations** to reduce portfolio default rate
+
+---
+
+## 📊 Dashboard Preview
+
+<img width="451" height="302" alt="Screenshot 2026-09-02 145936" src="https://github.com/user-attachments/assets/264466b5-3d90-4293-ad9a-51746bade487" />
+
+
+**🔗 [View Interactive Excel Dashboard](./LoanDefaultAnalysis.xlsx)**
+
+---
+
+## 🗂️ Dataset
+
+| Attribute | Details |
+|-----------|---------|
+| **Source** | Lending Club Public Loan Data |
+| **Period** | 2007–2018 |
+| **Volume** | 2.26M loan records |
+| **Total Loan Value** | \$34.02 Billion |
+| **Fields** | 25+ (loan amount, grade, DTI, purpose, home ownership, state, interest rate, loan status, income, etc.) |
+
+### Key Fields Used
+- `loan_amnt`, `int_rate`, `grade`, `sub_grade`
+- `annual_inc`, `dti`, `home_ownership`, `addr_state`
+- `purpose`, `loan_status`, `issue_d`, `term`
+
+---
+
+## 🛠️ Tools & Technologies
+
+| Tool | Purpose |
+|------|---------|
+| **SQL Server (SSMS)** | Data cleaning, aggregation, CTE-based analysis |
+| **Microsoft Excel** | Dashboard design, pivot tables, KPI visualization |
+| **Excel Charts** | Combo charts, Pareto analysis, comparative bars |
+
+---
 
 ## 🔬 Methodology
-1. **Data Cleaning**: Dataset contain missing details such as course fee which differ for each region. Using conditional formula and autofill feature the course fee for each student is calculated. As per Gender of the students a salutation field is added and concataneted with name to obtain proper full name.   
-2. **Feature Engineering**: Using XLOOKUP, the details of the users experienced login issues is filled in another table. 
-3. **EDA**: Conditional aggregation formulas (SUMIF, COUNTIF) used to analyse the payment status and collected revenue. Also obtained number of students who uses various device. The user engagement is analysed using the average streak and average points. 
-4. **Visualization Strategy**: Pivot tables are used to summarize the given data based on region, signup device, passing year, education background, courses enrolled. Then bar chart is used to visualize number of students enrolled as per the selected metric. Donut chart is used to indicate percentagewise distribution of students as per their education background. Slicers are used to filter the visuals based on gender and payment status to make it interactive. 
 
-## KPIs 
-- Total Revenue :- The total payment collected from enrolled students.
-- Total Students :- Total number of students enrolled in the platform.
-- Average Revenue Per student :- Total Revenue/Total Students
-- Mobile Users :- Percentage of users with mobile as sign up device 
-- Payment Completion Rate :- Percentage of enrolled students whose payment status is Completed.
-- Average Streak :- Average of the number of days students visited the platform continuously
-- Average Points :- Average of the points acquired by students by completing course modules 
+### 1. Data Cleaning (SQL)
+- Removed records with NULL DTI and \$0 income (1,711 records) — data quality issues
+- Standardized loan status into binary default flag (`Charged Off`, `Default` → 1)
+- Filtered outliers: DTI > 100 (placeholder values)
+- Created `loans_clean` table as single source of truth
 
-## Key Findings
+### 2. Feature Engineering
+- **DTI Bucketing:** Categorized into Low / Moderate / High / Very High / Extreme
+- **Risk Profile:** Derived from grade (A-B = Low, C = Medium, D-G = High)
+- **Default Flag:** Binary indicator from loan_status
 
-📊 **Overall Portfolio Health**
-- Total loans analyzed: 2.26M
-- Overall default rate: __%
-- Total capital deployed: $__ million
+### 3. Exploratory Analysis (SQL)
+Wrote 8+ analytical queries using **CTEs, window functions, and conditional aggregation** to compute:
+- Default rate by grade, purpose, DTI, home ownership, state, year
+- Cross-tabulations to validate hypotheses (e.g., DTI × Purpose)
+- Interest rate vs. realized default rate comparisons
 
-⚠️ **Top Risk Factors**
-1. Grade G loans default at __% vs Grade A at __%
-2. Small business loans have __% default rate — highest among purposes
-3. Borrowers with DTI > 30 default __x more than those with DTI < 10
-4. Renters default __% more than homeowners
+### 4. Dashboard Design (Excel)
+- KPI cards for portfolio-level metrics
+- Combo charts (bar + line) for volume vs. rate analysis
+- Insight-driven chart titles that state the *finding*, not the *field*
+- Footnotes for anomalies requiring context
 
-🌎 **Geographic Risk**
-- Highest risk states: __, __, __
-- Safest states: __, __, __
+---
 
-📈 **Trends**
-- Default rates spiked in year __ (likely due to __)
-- Average loan size grew from $__ to $__ over the period
+## 📈 Key Performance Indicators
 
-## Recommendations
-- Increase targeted marketing campaigns in East and West regions to improve student acquisition and balance regional enrollment.
-- Continue developing courses aligned with the needs of recent graduates while exploring programs tailored for working professionals to diversify the learner base.
-- Continue investing in the mobile learning experience, as over 77% of students access the platform via mobile devices.
-- Review the Web Development course offering, pricing, and curriculum to identify factors contributing to low enrollment and improve its market appeal.
-- Introduce automated payment reminders and simplify the payment process to improve payment completion rates.
-## Skills Demonstrated
+| KPI | Value |
+|-----|-------|
+| **Total Loans** | 2,260,668 |
+| **Total Loan Volume** | \$34.02B |
+| **Average Loan Size** | \$15,047 |
+| **Average Interest Rate** | 13.09% |
+| **Total Defaults** | 284,344 |
+| **Overall Default Rate** | 12.58% |
 
-- Data Cleaning
-- Data Analysis
-- Dashboard Design
-- Pivot Tables
-- Pivot Charts
-- Interactive Slicers
-- KPI Development
-- Business Analysis
-- Data Storytelling
+---
+
+## 🔍 Key Findings
+
+### 🎯 Overall Portfolio Health
+- **12.58% overall default rate** across 2.26M loans
+- **\$34B deployed capital**, with average loan size of \$15K
+- Default rate declined significantly post-2010 (26% → ~15%)
+
+### ⚠️ Top Risk Factors
+
+| # | Finding |
+|---|---------|
+| 1 | **Grade G loans default at ~40% vs Grade A at ~5%** — 8x risk gradient |
+| 2 | **Educational loans (20.75%)** and **small business (19.81%)** have highest default rates by purpose |
+| 3 | **Very High DTI (30-40) borrowers default at 17.01%** vs Low DTI (<10) at 9.65% |
+| 4 | **Renters default 34% more often** than mortgage holders (14.64% vs 10.92%) |
+| 5 | **High-risk grade loans default 4x more** than low-risk (20.96% vs 5.32%) |
+
+### 🧠 Counterintuitive Insight (Deep-Dive Analysis)
+
+**Extreme DTI (40+) borrowers default LESS (7.13%) than moderate DTI borrowers.** 
+
+Investigation revealed:
+- **82% of Extreme DTI loans are debt refinancing** (62% debt consolidation + 20% credit card)
+- These borrowers use loans to **REDUCE** their DTI, not increase risk
+- Lender charges highest interest rate (15.21%) — filters risky applicants via price
+- **Implication:** Loan *purpose* should be weighted alongside DTI in credit models
+
+### 🌎 Geographic Risk
+- **Highest default rates:** AL (15.20%), AR (14.89%), MS (14.73%)
+- **Lowest default rates:** HI (13.63%), SD (13.63%), NY (13.80%)
+- Southern states show elevated risk — likely correlated with income levels
+
+### 📅 Temporal Trends
+- **Default rate peaked at 26% in 2007** (financial crisis vintage)
+- **Steadily declined to ~15% by 2016** — reflects tightened underwriting
+- **2018 shows 3% default rate** — *understated due to loan maturity (defaults typically occur years 2-4)*
+
+---
+
+## 💡 Business Recommendations
+
+### 🎯 Underwriting Policy
+1. **Reprice or restrict Grade E-G loans** — current default rates (25-40%) may exceed risk premium
+2. **Cap exposure to educational & small business segments** — 60% above portfolio average default rate
+3. **Introduce DTI × Purpose composite score** — high DTI + consolidation ≠ high DTI + new consumption
+4. **Weight home ownership more heavily** — renters carry 34% higher default risk
+
+### 📊 Portfolio Strategy
+5. **Diversify geographic concentration** — southern states show elevated risk clusters
+6. **Monitor recent vintages carefully** — apparent low default rates in newer loans reflect maturity bias, not lower risk
+
+### 🔧 Model Enhancement
+7. **Re-examine DTI thresholds** — the current linear assumption breaks at the extreme
+8. **Add "loan purpose intent" flag** — refinancing vs. new consumption behaves differently
+
+---
+
+## 🧠 Skills Demonstrated
+
+- ✅ **SQL:** CTEs, window functions, conditional aggregation, cross-tab analysis
+- ✅ **Data Cleaning:** Null handling, outlier detection, data quality validation
+- ✅ **Exploratory Data Analysis:** Hypothesis formulation → testing → iteration
+- ✅ **Statistical Reasoning:** Sample size validation, selection bias identification
+- ✅ **Data Visualization:** Excel dashboards, combo charts, insight-driven design
+- ✅ **Business Storytelling:** Translating data patterns into actionable recommendations
+- ✅ **Critical Thinking:** Investigating counterintuitive patterns rather than accepting them
+
+---
+
+## 📁 Repository Structure
+
+```
+📦 Loan-Default-Analysis
+ ┣ 📂 sql
+ ┃ ┣ 📜 01_data_cleaning.sql
+ ┃ ┣ 📜 02_kpi_metrics.sql
+ ┃ ┣ 📜 03_default_by_grade.sql
+ ┃ ┣ 📜 04_default_by_purpose.sql
+ ┃ ┣ 📜 05_dti_analysis.sql
+ ┃ ┗ 📜 06_dti_purpose_deepdive.sql
+ ┣ 📂 data
+ ┃ ┗ 📜 loans_summary.csv
+ ┣ 📂 images
+ ┃ ┣ 📜 dashboard_page1.png
+ ┃ ┗ 📜 dashboard_page2.png
+ ┣ 📜 LoanDefaultAnalysis.xlsx
+ ┗ 📜 README.md
+```
+
+---
+
+## 🚀 How to Reproduce
+
+1. Clone this repository
+2. Download the Lending Club dataset from [Kaggle](https://www.kaggle.com/datasets/wordsforthewise/lending-club)
+3. Run SQL scripts in the `/sql` folder in numerical order
+4. Export summary tables to Excel
+5. Open `LoanDefaultAnalysis.xlsx` to view the dashboard
+
+---
+
+## 📬 Contact
+
+**[Your Name]**  
+📧 [your.email@example.com]  
+💼 [LinkedIn](https://linkedin.com/in/yourprofile)  
+🌐 [Portfolio](https://yourportfolio.com)
+
+---
+
+⭐ *If you found this analysis useful, please star the repo!*
