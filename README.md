@@ -33,6 +33,33 @@ A consumer lending institution wants to:
 
 
 ---
+### 🔍 Sample Query: DTI Deep-Dive Analysis
+
+```sql
+
+WITH categorized AS (
+    SELECT 
+        CASE 
+            WHEN dti < 10 THEN 'Low (<10)'
+            WHEN dti BETWEEN 10 AND 20 THEN 'Moderate (10-20)'
+            WHEN dti BETWEEN 20 AND 30 THEN 'High (20-30)'
+            WHEN dti BETWEEN 30 AND 40 THEN 'Very High (30-40)'
+            WHEN dti >= 40 THEN 'Extreme (40+)'
+        END AS dti_bucket,
+        purpose
+    FROM loans_clean
+    WHERE dti IS NOT NULL
+)
+SELECT 
+    dti_bucket,
+    purpose,
+    COUNT(*) AS loans,
+    ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (PARTITION BY dti_bucket), 2) AS pct_of_bucket
+FROM categorized
+GROUP BY dti_bucket, purpose
+ORDER BY dti_bucket, loans DESC;
+
+```
 
 ## 🗂️ Dataset
 
