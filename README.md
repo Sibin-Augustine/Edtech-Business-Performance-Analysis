@@ -28,9 +28,6 @@ A consumer lending institution wants to:
 
 <img width="465" height="314" alt="image" src="https://github.com/user-attachments/assets/eb00120b-39e1-488d-8282-f683bfd56bc0" />
 
-<img width="464" height="302" alt="image" src="https://github.com/user-attachments/assets/0098bd32-8af0-4ef8-ba7f-cda60f0f561e" />
-
-
 
 ---
 
