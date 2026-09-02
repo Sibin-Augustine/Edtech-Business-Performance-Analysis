@@ -132,11 +132,29 @@ Wrote 8+ analytical queries using **CTEs, window functions, and conditional aggr
 
 ### Credit Grading prediction Spot ON !!!
 
-<img width="437" height="118" alt="image" src="https://github.com/user-attachments/assets/aa1782c9-7c53-45a5-9f09-25fd7d7ad72b" />
+<img width="698" height="177" alt="image" src="https://github.com/user-attachments/assets/0acbf7bb-3400-4f75-b383-29ab1d8bb342" />
 
 
 ---
 
+### Students, Small Business Owners and Rented house owners are High risk Borrowers 🚨 
+
+<img width="697" height="179" alt="image" src="https://github.com/user-attachments/assets/b726069f-d9cf-4565-879b-b2de2dee9850" />
+
+
+---
+
+### Extremely high DTI means highest default, wait, what !!! Only 3% Default on 2018, Hmmm 🤔
+
+<img width="699" height="224" alt="image" src="https://github.com/user-attachments/assets/5b0e45dd-15bc-4e59-88a2-4342c2329286" />
+
+---
+
+### Risk analysis is accurate, southern States with higher default rate 
+
+<img width="696" height="190" alt="image" src="https://github.com/user-attachments/assets/b7c5a4c1-1aa0-46eb-83fd-f66aefc05131" />
+
+---
 ## 🔍 Key Findings
 
 ### 🎯 Overall Portfolio Health
