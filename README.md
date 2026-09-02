@@ -2,7 +2,6 @@
 
 > An end-to-end credit risk analysis of **2.26M loans** from Lending Club (2007–2018), uncovering key default drivers and delivering actionable underwriting recommendations for BFSI/Fintech lenders.
 
-<img width="454" height="314" alt="image" src="https://github.com/user-attachments/assets/99299213-8b55-4e9c-96cf-96b513ca8c59" />
 
 
 ---
@@ -27,10 +26,11 @@ A consumer lending institution wants to:
 
 ## 📊 Dashboard Preview
 
-<img width="451" height="302" alt="Screenshot 2026-09-02 145936" src="https://github.com/user-attachments/assets/264466b5-3d90-4293-ad9a-51746bade487" />
+<img width="465" height="314" alt="image" src="https://github.com/user-attachments/assets/eb00120b-39e1-488d-8282-f683bfd56bc0" />
+
+<img width="464" height="302" alt="image" src="https://github.com/user-attachments/assets/0098bd32-8af0-4ef8-ba7f-cda60f0f561e" />
 
 
-**🔗 [View Interactive Excel Dashboard](./LoanDefaultAnalysis.xlsx)**
 
 ---
 
@@ -170,43 +170,13 @@ Investigation revealed:
 
 ---
 
-## 📁 Repository Structure
 
-```
-📦 Loan-Default-Analysis
- ┣ 📂 sql
- ┃ ┣ 📜 01_data_cleaning.sql
- ┃ ┣ 📜 02_kpi_metrics.sql
- ┃ ┣ 📜 03_default_by_grade.sql
- ┃ ┣ 📜 04_default_by_purpose.sql
- ┃ ┣ 📜 05_dti_analysis.sql
- ┃ ┗ 📜 06_dti_purpose_deepdive.sql
- ┣ 📂 data
- ┃ ┗ 📜 loans_summary.csv
- ┣ 📂 images
- ┃ ┣ 📜 dashboard_page1.png
- ┃ ┗ 📜 dashboard_page2.png
- ┣ 📜 LoanDefaultAnalysis.xlsx
- ┗ 📜 README.md
-```
-
----
-
-## 🚀 How to Reproduce
-
-1. Clone this repository
-2. Download the Lending Club dataset from [Kaggle](https://www.kaggle.com/datasets/wordsforthewise/lending-club)
-3. Run SQL scripts in the `/sql` folder in numerical order
-4. Export summary tables to Excel
-5. Open `LoanDefaultAnalysis.xlsx` to view the dashboard
-
----
 
 ## 📬 Contact
 
 **[Your Name]**  
-📧 [your.email@example.com]  
-💼 [LinkedIn](https://linkedin.com/in/yourprofile)  
+📧 [sibinaugustine12830@gamil.com]  
+💼 [LinkedIn](https://www.linkedin.com/in/sibin-augustine-53222516a/)  
 🌐 [Portfolio](https://yourportfolio.com)
 
 ---
