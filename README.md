@@ -128,6 +128,15 @@ Wrote 8+ analytical queries using **CTEs, window functions, and conditional aggr
 
 ---
 
+## 🖼️ Visualizations
+
+### Credit Grading prediction Spot ON !!!
+
+<img width="437" height="118" alt="image" src="https://github.com/user-attachments/assets/aa1782c9-7c53-45a5-9f09-25fd7d7ad72b" />
+
+
+---
+
 ## 🔍 Key Findings
 
 ### 🎯 Overall Portfolio Health
