@@ -193,7 +193,7 @@ ORDER BY dti_bucket, loans DESC;
 
 ### 🧠 Counterintuitive Insight (Deep-Dive Analysis)
 
-**Extreme DTI (40+) borrowers default LESS (7.13%) than moderate DTI borrowers.** 
+**Extreme DTI (40+) borrowers default LESS (9.18%) than Low DTI borrowers.** 
 
 Investigation revealed:
 - **82% of Extreme DTI loans are debt refinancing** (62% debt consolidation + 20% credit card)
